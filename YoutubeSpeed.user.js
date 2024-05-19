@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  play youtube videos at any speed from 0-16x
 // @author       scamper-paws
-// @match        ://www.youtube.com/watch*
+// @match        https://www.youtube.com/watch*
 // @grant        none
 // ==/UserScript==
 
