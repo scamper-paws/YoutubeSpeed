@@ -28,10 +28,10 @@ function changeSpeed() {
     document.querySelector('video').playbackRate=(speed);
 }
 
-if (document.readyState == "complete" || document.readyState == "interactive") {
+if (document.readyState == "complete") {
     makeButtons();
 } else {
-    document.addEventListener("DOMContentLoaded", makeButtons);
+    window.addEventListener("load", makeButtons);
 }
 
 // change bg color to black and text color to gray for theater mode
