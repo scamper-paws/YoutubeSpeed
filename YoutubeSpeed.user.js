@@ -28,7 +28,7 @@ function changeSpeed() {
     document.querySelector('video').playbackRate=(speed);
 }
 
-if (document.readyState == "complete") {
+if (document.readyState === "complete") {
     makeButtons();
 } else {
     window.addEventListener("load", makeButtons);
