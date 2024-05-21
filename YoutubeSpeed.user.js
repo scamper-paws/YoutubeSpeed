@@ -29,6 +29,7 @@ function makeButtons() {
             document.getElementById("seek-div").remove();
         }
     }
+    window.removeEventListener("load", makeButtons);
 }
 
 function changeSpeed() {
