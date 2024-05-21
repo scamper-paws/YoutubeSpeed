@@ -11,7 +11,7 @@
 "use strict";
 
 function makeButtons() {
-    if(!document.getElementById("speed-div")) {
+    if (!document.getElementById("speed-div")) {
         const newElement = document.createElement("div");
         document.getElementById("center").appendChild(newElement);
         newElement.outerHTML = '<div id="speed-div" style="margin: 0px 0px 0px 15px;"><input type="input" id="speed-textbox" size="3"></input><button type="button" id="speed-button">speed</button></div>';
@@ -61,13 +61,13 @@ window.addEventListener("yt-navigate-finish", makeButtons);
 // change bg color to black and text color to gray for theater mode
 const theaterElement = document.getElementById("masthead");
 const mutationCallback = function(mutationsList, observer) {
-    for(const mutation of mutationsList) {
+    for (const mutation of mutationsList) {
         if (mutation.type === "attributes") {
             if (mutation.attributeName === "theater" || mutation.attributeName === "dark") {
                 if (mutation.oldValue === null) {
                     console.log("theater mode entered");
-                    document.getElementById("speed-textbox").style="background-color: black; color: white";
-                    document.getElementById("speed-button").style="background-color: black; color: gray";
+                    document.getElementById("speed-textbox").style = "background-color: black; color: white";
+                    document.getElementById("speed-button").style = "background-color: black; color: gray";
                 } else {
                     console.log("theater mode exited");
                     document.getElementById("speed-textbox").removeAttribute("style");
