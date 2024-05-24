@@ -16,6 +16,11 @@ function makeButtons() {
         document.getElementById("center").appendChild(newElement);
         newElement.outerHTML = '<div id="speed-div" style="margin: 0px 0px 0px 15px;"><input type="input" id="speed-textbox" size="3"></input><button type="button" id="speed-button">speed</button></div>';
         document.getElementById("speed-button").addEventListener("click", changeSpeed);
+        document.getElementById("speed-textbox").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                changeSpeed();
+            }
+        })
     }
     if (window.location.href.slice(0,30) === "https://www.youtube.com/shorts") {
         if (!document.getElementById("seek-div")) {
@@ -23,6 +28,11 @@ function makeButtons() {
             document.getElementById("center").appendChild(seekElement);
             seekElement.outerHTML = '<div id="seek-div" style="margin: 0px 0px 0px 15px;"><input type="input" id="seek-textbox" size="3"></input><button type="button" id="seek-button">seek</button></div>';
             document.getElementById("seek-button").addEventListener("click", seekTime);
+            document.getElementById("seek-textbox").addEventListener("keyup", function(event) {
+                if (event.key === "Enter") {
+                    seekTime();
+                }
+            })
         }
     } else {
         if (document.getElementById("seek-div")) {
