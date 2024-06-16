@@ -14,8 +14,9 @@ function makeButtons() {
     if (!document.getElementById("speed-div")) {
         const newElement = document.createElement("div");
         document.getElementById("center").appendChild(newElement);
-        newElement.outerHTML = '<div id="speed-div" style="margin: 0px 0px 0px 15px;"><input type="input" id="speed-textbox" size="3"></input><button type="button" id="speed-button">speed</button></div>';
+        newElement.outerHTML = '<div id="speed-div" style="margin: 0px 0px 0px 15px;"><input type="number" min="1" max="16" step="1" id="speed-textbox" size="3"></input><button type="button" id="speed-button">speed</button></div>';
         document.getElementById("speed-button").addEventListener("click", changeSpeed);
+        document.getElementById("speed-textbox").addEventListener("change", changeSpeed);
         document.getElementById("speed-textbox").addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
                 changeSpeed();
